@@ -1,0 +1,81 @@
+nav {
+    padding: 10px 60px;
+    background-color: rgb(44, 44, 44);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    
+    .hamburger {
+        button {
+            min-width: 44px;
+            min-height: 44px;
+            background-color: rgba(255, 255, 255, 0);
+            border: 0px;
+            font-size: 20px;
+            cursor: pointer;
+            padding-top: 10px;
+            &:hover {
+                color: rgb(59, 59, 59);
+            }
+    
+        }
+    }
+
+    .logo {
+        text-align: right;
+        h1 {
+            margin: 0;
+            margin-top: 13px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 22px;
+        }
+        .btn-dropdown {
+            background-color: rgba(255, 255, 255, 0) !important;
+        }
+    }
+}
+
+.drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(44, 44, 44);
+    box-sizing: border-box;
+    border-right: 1px solid white;
+    ul {
+        padding: 0 !important;
+    }
+    li {
+        font-size: 18px;
+        list-style: none;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        min-height: 44px;
+    }
+    .sub-logo {
+        margin: 20px 0;
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin: 15px 0;
+        }
+    }
+    .list-item {
+        font-size: 16px;
+        padding: 20px !important;
+        a{
+            margin: 0 40px;
+            &:hover {
+                color: rgb(199, 199, 199) !important;
+                text-decoration: none;
+            }
+        }
+        &:hover {
+            background-color: rgb(24, 24, 24);
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+.hamb-close {
+    display: none;
+}

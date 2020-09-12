@@ -1,0 +1,18 @@
+.hide-drawer {
+    transform: translate(-300px, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.body-move-off {
+    transform: translate(0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.body-move-on {
+    transform: translate(300px, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.hamb-on {
+    display: inline !important;
+}
+.hamb-off {
+    display: none;
+}
