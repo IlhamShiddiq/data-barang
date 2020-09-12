@@ -11,6 +11,11 @@ body {
   min-height: 90vh;
 }
 
+form.form-search {
+  width: 70%;
+  margin: auto;
+}
+
 .hide-drawer {
   transform: translate(-300px, 0);
   transition: transform 0.3s ease-in-out;
