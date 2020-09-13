@@ -37,6 +37,7 @@
         <ul>
             <li class="sub-logo text-white"><h1>DataBarang</h1></li>
             <li class="list-item"><a href="/home" class="text-white"><i class="fas fa-home"></i> &nbsp;&nbsp;&nbsp;Home</a></li>
+            <li class="list-item"><a href="/home" class="text-white"><i class="fas fa-plus"></i> &nbsp;&nbsp;&nbsp;Add Data Barang</a></li>
             <li class="list-item"><a href="/data" class="text-white"><i class="fas fa-server"></i> &nbsp;&nbsp;&nbsp;Data Barang</a></li>
             <li class="list-item"><a href="/about" class="text-white"><i class="fas fa-info-circle"></i> &nbsp;&nbsp;&nbsp;About</a></li>
         </ul>
