@@ -40,3 +40,7 @@ Route::get('/about', function () {
 Route::get('/edit', function () {
     return view('edit');
 });
+
+Route::get('/myprofile', function () {
+    return view('myprofile');
+});
