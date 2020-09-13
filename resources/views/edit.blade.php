@@ -8,7 +8,7 @@
     <div class="row mt-5">
         <div class="col-12">
             <div class="form-add-wrapper">
-                <h1 class="mb-2 title-add text-center">Add Data Barang</h1>
+                <h1 class="mb-2 title-add text-center">Edit Data Barang</h1>
                 <hr>
                 <form>
                     <div class="form-row">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="add-btn mt-2">
-                        <button type="submit" class="btn btn-primary">Add Data</button>
+                        <button type="submit" class="btn btn-success">Edit Data</button>
                     </div>
                 </form>
             </div>

@@ -53,6 +53,8 @@
         <p class="text-white">Copyright 2020 &copy; DataBarang</p>
     </footer>
 
+    @yield('more')
+
     <!-- Logout Modal -->
     <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="Logout Modal" aria-hidden="true">
         <div class="modal-dialog">
