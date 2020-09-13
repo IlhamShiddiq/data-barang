@@ -1,0 +1,25 @@
+body.login-page {
+    margin: 0;
+    background-color: rgb(44, 44, 44);
+}
+.login-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .login-box {
+        width: 50%;
+        background-color: rgb(44, 44, 44);
+        box-shadow: 0 0 10px 0.2rem rgba(0, 0, 0, 0.25);
+        margin: auto;
+        border-radius: 10px;
+        padding: 50px 125px;
+        box-sizing: border-box;
+        .btn-submit {
+            text-align: center;
+            button.submit-login {
+                width: 50%;
+            }
+        }
+    }
+}

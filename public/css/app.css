@@ -16,6 +16,36 @@ form.form-search {
   margin: auto;
 }
 
+body.login-page {
+  margin: 0;
+  background-color: #2c2c2c;
+}
+
+.login-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.login-wrapper .login-box {
+  width: 50%;
+  background-color: #2c2c2c;
+  box-shadow: 0 0 10px 0.2rem rgba(0, 0, 0, 0.25);
+  margin: auto;
+  border-radius: 10px;
+  padding: 50px 125px;
+  box-sizing: border-box;
+}
+
+.login-wrapper .login-box .btn-submit {
+  text-align: center;
+}
+
+.login-wrapper .login-box .btn-submit button.submit-login {
+  width: 50%;
+}
+
 .hide-drawer {
   transform: translate(-300px, 0);
   transition: transform 0.3s ease-in-out;
