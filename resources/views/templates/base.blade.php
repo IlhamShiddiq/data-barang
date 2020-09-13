@@ -27,7 +27,7 @@
                   <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> &nbsp;&nbsp;My Profile</a>
                   <a class="dropdown-item" href="#"><i class="fas fa-unlock-alt"></i> &nbsp;&nbsp;Change Password</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout</a>
+                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logout"><i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout</a>
                 </div>
             </div>
         </div>
@@ -53,6 +53,26 @@
         <p class="text-white">Copyright 2020 &copy; DataBarang</p>
     </footer>
 
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="Logout Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Please Confirm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to exit?
+                </div>
+                <div class="modal-footer">
+                    <a href="/login" class="btn btn-danger">Yes</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
