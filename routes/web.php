@@ -44,3 +44,7 @@ Route::get('/edit', function () {
 Route::get('/myprofile', function () {
     return view('myprofile');
 });
+
+Route::get('/changepassword', function () {
+    return view('changepassword');
+});
