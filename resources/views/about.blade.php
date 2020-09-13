@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-12 text-center mt-3">
+        <div class="col-12 text-center mt-5">
             <p>DataBarang | v 1.0.0</p>
         </div>
     </div>

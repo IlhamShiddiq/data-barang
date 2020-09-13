@@ -9,7 +9,7 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      <button class="btn btn-secondary" type="button" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                   </div>
             </form>

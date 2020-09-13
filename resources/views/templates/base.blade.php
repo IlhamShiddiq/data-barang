@@ -24,10 +24,10 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">My Profile</a>
-                  <a class="dropdown-item" href="#">Change Password</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> &nbsp;&nbsp;My Profile</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-unlock-alt"></i> &nbsp;&nbsp;Change Password</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout</a>
                 </div>
             </div>
         </div>
