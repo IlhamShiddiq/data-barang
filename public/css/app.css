@@ -16,6 +16,25 @@ form.form-search {
   margin: auto;
 }
 
+.form-add-wrapper {
+  padding: 0 75px;
+}
+
+.view-img {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  margin: auto;
+}
+
+.add-btn {
+  text-align: center;
+}
+
+.add-btn button {
+  width: 40%;
+}
+
 body.login-page {
   margin: 0;
   background-color: #2c2c2c;
@@ -67,6 +86,16 @@ body.login-page {
 
 .hamb-off {
   display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 nav {
@@ -167,6 +196,14 @@ nav .logo .dropdown-item:active {
 
 .hamb-close {
   display: none;
+}
+
+button.disabled {
+  cursor: default !important;
+}
+
+button.disabled p {
+  color: #bdbdbd !important;
 }
 
 footer {

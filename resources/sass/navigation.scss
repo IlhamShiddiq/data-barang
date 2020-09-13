@@ -88,3 +88,10 @@ nav {
 .hamb-close {
     display: none;
 }
+
+button.disabled {
+    cursor: default !important;
+    p {
+        color: rgb(189, 189, 189) !important;
+    }
+}

@@ -13,14 +13,14 @@
 
     <nav class="nav-bar">
         <div class="hamburger">
-            <button id="hamburger" class="hamb-on-off"><p class="text-white">&#9776;</p></button>
+            <button id="hamburger" @yield('hide') class="@yield('hide') hamb-on-off"><p class="text-white">&#9776;</p></button>
             <button id="hamburger-close" class="hamb-on-off hamb-close"><p class="text-white">&#10005;</p></button>
         </div>
         <div class="logo text-white">
             <h1 class="d-inline-block">DataBarang</h1>
             <img src="img/user.png" class="d-inline-block rounded-circle ml-4 mb-1" alt="" width="30" height="30">
             <div class="btn-group d-inline-block">
-                <button type="button" class="btn btn-dropdown btn-sm dropdown-toggle text-white dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" @yield('hide') class="btn btn-dropdown btn-sm dropdown-toggle text-white dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -37,7 +37,7 @@
         <ul>
             <li class="sub-logo text-white"><h1>DataBarang</h1></li>
             <li class="list-item"><a href="/home" class="text-white"><i class="fas fa-home"></i> &nbsp;&nbsp;&nbsp;Home</a></li>
-            <li class="list-item"><a href="/home" class="text-white"><i class="fas fa-plus"></i> &nbsp;&nbsp;&nbsp;Add Data Barang</a></li>
+            <li class="list-item"><a href="/add" class="text-white"><i class="fas fa-plus"></i> &nbsp;&nbsp;&nbsp;Add Data Barang</a></li>
             <li class="list-item"><a href="/data" class="text-white"><i class="fas fa-server"></i> &nbsp;&nbsp;&nbsp;Data Barang</a></li>
             <li class="list-item"><a href="/about" class="text-white"><i class="fas fa-info-circle"></i> &nbsp;&nbsp;&nbsp;About</a></li>
         </ul>

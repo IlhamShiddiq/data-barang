@@ -25,6 +25,10 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/add', function () {
+    return view('add');
+});
+
 Route::get('/data', function () {
     return view('data');
 });
