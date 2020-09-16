@@ -14,17 +14,26 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="passlama">Password Lama</label>
-                        <input type="password"class="form-control" placeholder="Password Lama" id="passlama">
+                        <div class="pass-field">
+                            <input type="password"class="form-control" placeholder="Password Lama" id="passlama">
+                            <button type="button" id="show-passlama"><i class="fas fa-eye"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="passbaru">Password Baru</label>
-                        <input type="password" class="form-control" placeholder="Password Baru" id="passbaru">
+                        <div class="pass-field">
+                            <input type="password" class="form-control" placeholder="Password Baru" id="passbaru">
+                            <button type="button" id="show-passbaru"><i class="fas fa-eye"></i></button>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="passconf">Konfirmasi Password Baru</label>
-                        <input type="password" class="form-control" placeholder="Konfirmasi Password Baru" id="passconf">
+                        <div class="pass-field">
+                            <input type="password" class="form-control" placeholder="Konfirmasi Password Baru" id="passconf">
+                            <button type="button" id="show-passconf"><i class="fas fa-eye"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group form-check text-center">

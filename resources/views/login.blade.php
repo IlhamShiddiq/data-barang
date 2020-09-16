@@ -26,14 +26,17 @@
                     </div>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username">
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                <div class="pass-field">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Password" id="passlogin" aria-label="Password">
+                        <button type="button" id="show-passlogin"><i class="fas fa-eye"></i></button>
                     </div>
-                    <input type="text" class="form-control" placeholder="Password" aria-label="Password">
                 </div>
                 <div class="btn-submit mt-4">
-                    <button type="submit" class="btn btn-primary submit-login">Log In now</button>
+                    <a href="/home" class="btn btn-primary submit-login">Log In now</a>
                 </div>
             </form>
         </div>

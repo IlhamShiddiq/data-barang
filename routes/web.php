@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\PreventBackHistory;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Route::group(['middleware' => 'prevent-back-history'],function(){
+//   Auth::routes();
+//   Route::get('/home', 'HomeController@index');
+// });
+
 Route::get('/', function () {
     return view('login');
-});
-
+})
+; 
 Route::get('/login', function () {
     return view('login');
 });
