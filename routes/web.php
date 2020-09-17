@@ -20,38 +20,21 @@ use App\Http\Middleware\PreventBackHistory;
 //   Route::get('/home', 'HomeController@index');
 // });
 
-Route::get('/', function () {
-    return view('login');
-})
-; 
-Route::get('/login', function () {
-    return view('login');
-});
+// Login
+Route::get('/', 'LoginPageController@index');
+Route::get('/login', 'LoginPageController@index');
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Dashboard
+Route::get('/home', 'DashboardController@index');
 
-Route::get('/add', function () {
-    return view('add');
-});
+// Data Barang
+Route::get('/data', 'DataBarangController@index');
+Route::get('/add', 'DataBarangController@create');
+Route::get('/edit', 'DataBarangController@edit');
 
-Route::get('/data', function () {
-    return view('data');
-});
+// Data Pegawai yang sedang login
+Route::get('/myprofile', 'PegawaiLoginController@edit');
+Route::get('/changepassword', 'PegawaiLoginController@editPassword');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/edit', function () {
-    return view('edit');
-});
-
-Route::get('/myprofile', function () {
-    return view('myprofile');
-});
-
-Route::get('/changepassword', function () {
-    return view('changepassword');
-});
+// Static Page
+Route::get('/about', 'StaticPageController@about');
