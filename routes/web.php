@@ -23,6 +23,7 @@ use App\Http\Middleware\PreventBackHistory;
 // Login
 Route::get('/', 'LoginPageController@index');
 Route::get('/login', 'LoginPageController@index');
+Route::post('/login', 'LoginPageController@login');
 
 // Dashboard
 Route::get('/home', 'DashboardController@index');

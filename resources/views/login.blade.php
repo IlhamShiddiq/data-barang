@@ -19,24 +19,25 @@
             <div class="title-login text-center">
                 <h1 class="text-white mb-3">LOGIN</h1>
             </div>
-            <form>
+            <form action="/login" method="POST" action="login">
+                @csrf
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                    <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username">
                 </div>
                 <div class="pass-field">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Password" id="passlogin" aria-label="Password">
+                        <input type="text" class="form-control" name="password" placeholder="Password" id="passlogin" aria-label="Password">
                         <button type="button" id="show-passlogin"><i class="fas fa-eye"></i></button>
                     </div>
                 </div>
                 <div class="btn-submit mt-4">
-                    <a href="/home" class="btn btn-primary submit-login">Log In now</a>
+                    <button type="submit" class="btn btn-primary submit-login">Log In now</button>
                 </div>
             </form>
         </div>
