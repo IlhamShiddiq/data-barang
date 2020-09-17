@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Pegawai;
 use Illuminate\Http\Request;
 
 class PegawaiLoginController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
