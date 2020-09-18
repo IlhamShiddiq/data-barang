@@ -69,7 +69,7 @@
                     Are you sure want to exit?
                 </div>
                 <div class="modal-footer">
-                    <a href="/login" class="btn btn-danger">Yes</a>
+                    <a href="/logout" class="btn btn-danger">Yes</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 </div>
             </div>

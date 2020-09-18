@@ -14,28 +14,28 @@ use App\Http\Middleware\PreventBackHistory;
 |
 */
 
-
-// Route::group(['middleware' => 'prevent-back-history'],function(){
-//   Auth::routes();
-//   Route::get('/home', 'HomeController@index');
-// });
-
 // Login
 Route::get('/', 'LoginPageController@index');
-Route::get('/login', 'LoginPageController@index');
+Route::get('/login', 'LoginPageController@index')->name('login');
+Route::get('/logout', 'LoginPageController@logout');
+Route::get('/noauth', 'LoginPageController@noauth')->name('noauth');
 Route::post('/login', 'LoginPageController@login');
 
-// Dashboard
-Route::get('/home', 'DashboardController@index');
+Route::group(['middleware' => ['auth']], function () {
 
-// Data Barang
-Route::get('/data', 'DataBarangController@index');
-Route::get('/add', 'DataBarangController@create');
-Route::get('/edit', 'DataBarangController@edit');
+   // Dashboard
+    Route::get('/home', 'DashboardController@index')->middleware('auth');
 
-// Data Pegawai yang sedang login
-Route::get('/myprofile', 'PegawaiLoginController@edit');
-Route::get('/changepassword', 'PegawaiLoginController@editPassword');
+    // Data Barang
+    Route::get('/data', 'DataBarangController@index');
+    Route::get('/add', 'DataBarangController@create');
+    Route::get('/edit', 'DataBarangController@edit');
 
-// Static Page
-Route::get('/about', 'StaticPageController@about');
+    // Data Pegawai yang sedang login
+    Route::get('/myprofile', 'PegawaiLoginController@edit');
+    Route::get('/changepassword', 'PegawaiLoginController@editPassword');
+
+    // Static Page
+    Route::get('/about', 'StaticPageController@about'); 
+
+});

@@ -32,7 +32,7 @@
                         <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="password" placeholder="Password" id="passlogin" aria-label="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" id="passlogin" aria-label="Password">
                         <button type="button" id="show-passlogin"><i class="fas fa-eye"></i></button>
                     </div>
                 </div>

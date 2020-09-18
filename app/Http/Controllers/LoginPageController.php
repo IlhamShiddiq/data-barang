@@ -22,6 +22,15 @@ class LoginPageController extends Controller
         } else{
             return redirect('/login');
         }
+    }
 
+    public function logout() {
+        Auth::logout();
+
+        return redirect('/login');
+    }
+
+    public function noauth() {
+        return view('utils.noauth');
     }
 }
