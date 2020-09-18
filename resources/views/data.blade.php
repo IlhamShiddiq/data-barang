@@ -5,12 +5,14 @@
 @section('content')
     <div class="row">
         <div class="col-12 mt-5">
-            <form action="" class="form-search">
+            <form action="{{url('/search')}}" method="POST" class="form-search">
+                @csrf
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                    <input type="text" class="form-control" name="search" placeholder="Search" aria-label="Search">
                     <div class="input-group-append">
-                      <button class="btn btn-secondary" type="button" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      <button class="btn btn-secondary" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
+                    <a href="{{url('/data')}}" class="btn btn-success ml-2 px-3"><i class="fas fa-sync"></i></a>
                   </div>
             </form>
         </div>
@@ -103,10 +105,7 @@
         let kategori = button.data('kategori')
         let modal = $(this)
 
-        if(expired === '0000-00-00')
-        {
-          expired = '-'
-        }
+        if(expired === '0000-00-00') expired = '-'
 
         modal.find('.modal-title').text(`${barang} (ID : ${id})`)
         modal.find('.view-img').html(`<img src="uploaded_files/barang/${image}" alt="${barang}" width="100">`)

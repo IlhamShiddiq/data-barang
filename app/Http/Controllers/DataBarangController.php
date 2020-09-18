@@ -88,4 +88,17 @@ class DataBarangController extends Controller
     {
         //
     }
+
+    public function search(Request $request) 
+    {
+        $word = $request->input('search');
+
+        $listbarang = DB::table('barang')
+            ->join('kategori', 'barang.id_kategori', '=', 'kategori.id')
+            ->select('barang.*', 'kategori.kategori')
+            ->where('barang.barang', 'like', '%'.$word.'%')
+            ->get();
+
+        return view('data', compact('listbarang'));
+    }
 }
