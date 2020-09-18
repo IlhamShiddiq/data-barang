@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
 
-    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 </head>
 <body class="body-move-off">
@@ -24,8 +24,8 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="/myprofile"><i class="fas fa-user-circle"></i> &nbsp;&nbsp;My Profile</a>
-                  <a class="dropdown-item" href="/changepassword"><i class="fas fa-unlock-alt"></i> &nbsp;&nbsp;Change Password</a>
+                  <a class="dropdown-item" href="{{url('/myprofile')}}"><i class="fas fa-user-circle"></i> &nbsp;&nbsp;My Profile</a>
+                  <a class="dropdown-item" href="{{url('/changepassword')}}"><i class="fas fa-unlock-alt"></i> &nbsp;&nbsp;Change Password</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logout"><i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout</a>
                 </div>
@@ -36,10 +36,10 @@
     <div class="drawer hide-drawer" id="drawer">
         <ul>
             <li class="sub-logo text-white"><h1>DataBarang</h1></li>
-            <li class="list-item"><a href="/home" class="text-white"><i class="fas fa-home"></i> &nbsp;&nbsp;&nbsp;Home</a></li>
-            <li class="list-item"><a href="/add" class="text-white"><i class="fas fa-plus"></i> &nbsp;&nbsp;&nbsp;Add Data Barang</a></li>
-            <li class="list-item"><a href="/data" class="text-white"><i class="fas fa-server"></i> &nbsp;&nbsp;&nbsp;Data Barang</a></li>
-            <li class="list-item"><a href="/about" class="text-white"><i class="fas fa-info-circle"></i> &nbsp;&nbsp;&nbsp;About</a></li>
+            <li class="list-item"><a href="{{url('/home')}}" class="text-white"><i class="fas fa-home"></i> &nbsp;&nbsp;&nbsp;Home</a></li>
+            <li class="list-item"><a href="{{url('/add')}}" class="text-white"><i class="fas fa-plus"></i> &nbsp;&nbsp;&nbsp;Add Data Barang</a></li>
+            <li class="list-item"><a href="{{url('/data')}}" class="text-white"><i class="fas fa-server"></i> &nbsp;&nbsp;&nbsp;Data Barang</a></li>
+            <li class="list-item"><a href="{{url('/about')}}" class="text-white"><i class="fas fa-info-circle"></i> &nbsp;&nbsp;&nbsp;About</a></li>
         </ul>
     </div>
     
@@ -69,7 +69,7 @@
                     Are you sure want to exit?
                 </div>
                 <div class="modal-footer">
-                    <a href="/logout" class="btn btn-danger">Yes</a>
+                    <a href="{{url('/logout')}}" class="btn btn-danger">Yes</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -79,7 +79,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./js/app.js"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
     
 </body>
 </html>

@@ -11,7 +11,7 @@
             <h1 class="noauth-info">CANNOT ACCESS ANOTHER PAGE, <br>PLEASE LOGIN FIRST</h1>
             <h1 class="noauth-sad my-3">:(</h1>
             <h1 class="noauth-text mt-5 mb-4">No Auth Detected</h1>
-            <p>Back to <a href="/login">login</a> page</p>
+            <p>Back to <a href="{{url('/login')}}">login</a> page</p>
         </div>
     </div>
 @endsection

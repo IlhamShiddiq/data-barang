@@ -29,7 +29,7 @@
                     <td>Mark</td>
                     <td>
                         <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail">Detail</a>
-                        <a href="edit" class="badge badge-success">Edit</a>
+                        <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
                         <a href="#" class="badge badge-danger">Delete</a>
                     </td>
                   </tr>

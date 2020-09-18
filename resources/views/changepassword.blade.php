@@ -67,7 +67,7 @@
                     Are you sure want to cancel? Your datas on the field won't be saved
                 </div>
                 <div class="modal-footer">
-                    <a href="/data" class="btn btn-primary">Yes</a>
+                    <a href="{{url('/data')}}" class="btn btn-primary">Yes</a>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 </div>
             </div>
