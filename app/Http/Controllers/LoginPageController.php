@@ -14,7 +14,11 @@ class LoginPageController extends Controller
 
     public function login(Request $request)
     {
-        // dump($request->all());
+        
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
 
         if(Auth::attempt($request->only('username', 'password')))
         {
