@@ -24,33 +24,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>
-                        <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail">Detail</a>
-                        <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>
-                        <a href="#" class="badge badge-info">Detail</a>
-                        <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>
-                        <a href="#" class="badge badge-info">Detail</a>
-                        <a href="#" class="badge badge-success">Edit</a>
-                        <a href="#" class="badge badge-danger">Delete</a>
-                    </td>
-                  </tr>
+                  @foreach ($listbarang as $list)
+                    <tr>
+                      <th scope="row">{{$loop->iteration}}</th>
+                      <td>{{$list->barang}}</td>
+                      <td>
+                          <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail">Detail</a>
+                          <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
+                          <a href="#" class="badge badge-danger">Delete</a>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
         </div>

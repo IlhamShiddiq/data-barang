@@ -14,7 +14,9 @@ class DataBarangController extends Controller
      */
     public function index()
     {
-        return view('data');
+        $listbarang = Barang::all();
+
+        return view('data', compact('listbarang'));
     }
 
     /**
