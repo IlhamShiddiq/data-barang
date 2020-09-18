@@ -29,7 +29,7 @@
                       <th scope="row">{{$loop->iteration}}</th>
                       <td>{{$list->barang}}</td>
                       <td>
-                          <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail">Detail</a>
+                          <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail" data-id="{{$list->id}}" data-barang="{{$list->barang}}" data-stok="{{$list->stok}}" data-expired="{{$list->expired}}" data-image="{{$list->image}}" data-kategori="{{$list->kategori}}">Detail</a>
                           <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
                           <a href="#" class="badge badge-danger">Delete</a>
                       </td>
@@ -42,7 +42,7 @@
 @endsection
 
 @section('more')
-  <!-- Logout Modal -->
+  <!-- Detail Modal -->
   <div class="modal fade" id="detail" tabindex="-1" aria-labelledby="Detail Modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -66,19 +66,19 @@
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Cat</span>
                         </div>
-                        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <div class="cat"></div>
                       </div>
                       <div class="input-group mb-2">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Exp</span>
                         </div>
-                        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <div class="exp"></div>
                       </div>
                       <div class="input-group mb-1">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="basic-addon1">Stk</span>
                         </div>
-                        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        <div class="stok"></div>
                       </div>
                     </form>
                   </div>
@@ -89,4 +89,30 @@
         </div>
     </div>
   </div>
+@endsection
+
+@section('script')
+    <script>
+      $('#detail').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget) // Button that triggered the modal
+        let id = button.data('id')
+        let barang = button.data('barang')
+        let stok = button.data('stok')
+        let expired = button.data('expired')
+        let image = button.data('image')
+        let kategori = button.data('kategori')
+        let modal = $(this)
+
+        if(expired === '0000-00-00')
+        {
+          expired = '-'
+        }
+
+        modal.find('.modal-title').text(`${barang} (ID : ${id})`)
+        modal.find('.view-img').html(`<img src="uploaded_files/barang/${image}" alt="${barang}" width="100">`)
+        modal.find('.cat').html(`<input type="text" class="form-control" value="${kategori}">`)
+        modal.find('.exp').html(`<input type="text" class="form-control" value="${expired}">`)
+        modal.find('.stok').html(`<input type="text" class="form-control" value="${stok}">`)
+      })
+    </script>
 @endsection

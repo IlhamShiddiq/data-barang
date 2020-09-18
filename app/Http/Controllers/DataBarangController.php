@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Barang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataBarangController extends Controller
 {
@@ -14,7 +15,10 @@ class DataBarangController extends Controller
      */
     public function index()
     {
-        $listbarang = Barang::all();
+        $listbarang = DB::table('barang')
+            ->join('kategori', 'barang.id_kategori', '=', 'kategori.id')
+            ->select('barang.*', 'kategori.kategori')
+            ->get();
 
         return view('data', compact('listbarang'));
     }
