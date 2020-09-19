@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/add', 'DataBarangController@create');
     Route::get('/edit', 'DataBarangController@edit');
     Route::post('/search', 'DataBarangController@search');
+    Route::post('/add', 'DataBarangController@store');
 
     // Data Pegawai yang sedang login
     Route::get('/myprofile', 'PegawaiLoginController@edit');

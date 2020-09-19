@@ -44,6 +44,17 @@
 @endsection
 
 @section('more')
+  @if (session('status'))
+  <div class="alert-status">
+    <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+      {{session('status')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+  @endif
+
   <!-- Detail Modal -->
   <div class="modal fade" id="detail" tabindex="-1" aria-labelledby="Detail Modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

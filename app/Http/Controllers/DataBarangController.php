@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Barang;
+use App\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\Storage;
 
 class DataBarangController extends Controller
 {
@@ -30,7 +33,16 @@ class DataBarangController extends Controller
      */
     public function create()
     {
-        return view('add');
+        $lastid = DB::table('barang')
+            ->select('id')
+            ->orderByDesc('id')
+            ->limit(1)
+            ->get();
+
+        $id = $lastid[0]->id + 1;
+        $kategori = DB::table('kategori')->get();
+        $data = [$id, $kategori];
+        return view('add', compact('data'));
     }
 
     /**
@@ -41,7 +53,26 @@ class DataBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+            'id_kategori' => 'required',
+            'barang' => 'required',
+            'stok' => 'required',
+            'foto' => 'mimes:jpeg,jpg,bmp,png|max:2000'
+        ]);
+
+        $file = $request->file('foto');
+
+        if($file) $image = $file->getClientOriginalName();
+        else $image = "barang.jpg";
+
+        $barang = Barang::create($request->all());
+        $barang->id = $request->id;
+        $barang->image = $image;
+        $barang->save();
+        if($file) $file->move(public_path('uploaded_files/barang/'),$file->getClientOriginalName());
+        // // File::delete(public_path('uploaded_files/barang/'.$file->getClientOriginalName()));
+        return redirect('/data')->with('status', 'Data Berhasil Disimpan!');
     }
 
     /**

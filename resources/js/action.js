@@ -52,7 +52,7 @@ $( "#show-passconf" ).click(function() {
 });
 
 $( "#show-passlogin" ).click(function() {
-    var pass = document.getElementById("passlogin");
+    var pass = document.getElementById("password");
     if (pass.type === "password") {
         pass.type = "text";
         $('#show-passlogin').html('<i class="fas fa-eye-slash"></i>');

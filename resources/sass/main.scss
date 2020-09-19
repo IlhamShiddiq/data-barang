@@ -42,3 +42,15 @@ form.form-search {
         cursor: pointer;
     }
 }
+
+.alert-status {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.invalid-file {
+    color: red;
+    margin-top: -15px;
+}
