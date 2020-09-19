@@ -14,21 +14,21 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="idPegawai">Id Pegawai</label>
-                            <input type="text" readonly class="form-control" placeholder="Id Pegawai" id="idPegawai">
+                            <input type="text" readonly class="form-control" placeholder="Id Pegawai" id="idPegawai" value="{{$users[0]->id}}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="username">Username</label>
-                            <input type="text" readonly class="form-control" placeholder="Username" id="username">
+                            <input type="text" readonly class="form-control" placeholder="Username" id="username" value="{{$users[0]->username}}">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="nama">Nama Pegawai</label>
-                            <input type="text" class="form-control" placeholder="Nama Pegawai" id="nama">
+                            <input type="text" class="form-control" placeholder="Nama Pegawai" id="nama" value="{{$users[0]->nama}}">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="alamat">Address</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="alamat" placeholder="Address"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="alamat" placeholder="Address">{{$users[0]->alamat}}</textarea>
                         </div>
                     </div>
                     <div class="form-row">
@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="phone">Nomor Telepon</label>
-                            <input type="number" class="form-control" placeholder="Nomor Telepon" id="phone">
+                            <input type="number" class="form-control" placeholder="Nomor Telepon" id="phone" value="{{$users[0]->phone}}">
                         </div>
                     </div>
                     <div class="form-row">

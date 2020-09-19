@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pegawai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiLoginController extends Controller
 {
@@ -58,7 +59,15 @@ class PegawaiLoginController extends Controller
     // public function edit($id) PAKE INI !!!!
     public function edit()
     {
-        return view('myprofile');
+        $id = auth()->user()->id;
+        
+        $users = DB::table('users')
+            ->join('pegawai', 'users.id', '=', 'pegawai.id')
+            ->select('users.*', 'pegawai.*')
+            ->where('users.id', '=', $id)
+            ->get();
+
+        return view('myprofile', compact('users'));
     }
 
     /**
