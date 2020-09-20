@@ -94,7 +94,10 @@ class DataBarangController extends Controller
      */
     public function edit(Barang $barang)
     {
-        return view('edit');
+        $kategori = DB::table('kategori')->get();
+        $data = [$barang, $kategori];
+
+        return view('edit', compact('data'));
     }
 
     /**
@@ -106,7 +109,34 @@ class DataBarangController extends Controller
      */
     public function update(Request $request, Barang $barang)
     {
-        //
+        $request->validate([
+            'id' => 'required',
+            'id_kategori' => 'required',
+            'barang' => 'required',
+            'stok' => 'required',
+            'foto' => 'mimes:jpeg,jpg,bmp,png|max:2000'
+        ]);
+
+        $file = $request->file('foto');
+
+        if($file) $foto = $file->getClientOriginalName();
+        else $foto = $barang->image;
+
+        Barang::where('id', $barang->id)
+                    ->update([
+                        'id_kategori' => $request->id_kategori,
+                        'barang' => $request->barang,
+                        'stok' => $request->stok,
+                        'expired' => $request->expired,
+                        'image' => $foto
+                        ]);
+
+        if($file) {
+            if($barang->image != "barang.jpg") File::delete(public_path('uploaded_files/barang/'.$barang->image));
+            $file->move(public_path('uploaded_files/barang/'),$file->getClientOriginalName());
+        }
+        
+        return redirect('/data')->with('status', 'Data Berhasil Diubah!');
     }
 
     /**

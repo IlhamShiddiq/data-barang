@@ -32,7 +32,7 @@
                       <td>{{$list->barang}}</td>
                       <td>
                           <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail" data-id="{{$list->id}}" data-barang="{{$list->barang}}" data-stok="{{$list->stok}}" data-expired="{{$list->expired}}" data-image="{{$list->image}}" data-kategori="{{$list->kategori}}">Detail</a>
-                          <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
+                          <a href="{{url('data/'.$list->id.'/edit')}}" class="badge badge-success">Edit</a>
                           <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#delete" data-id="{{$list->id}}">Delete</a>
                       </td>
                     </tr>
@@ -157,6 +157,6 @@
                                           @method('delete')
                                           <button type="submit" class="btn btn-danger">Yes</button>
                                         </form>`)
-      })
+                                      })
     </script>
 @endsection

@@ -29,10 +29,11 @@ Route::group(['middleware' => ['auth']], function () {
     // Data Barang
     Route::get('/data', 'DataBarangController@index');
     Route::get('/add', 'DataBarangController@create');
-    Route::get('/edit', 'DataBarangController@edit');
     Route::post('/search', 'DataBarangController@search');
     Route::post('/add', 'DataBarangController@store');
     Route::delete('/data/{barang}', 'DataBarangController@destroy');
+    Route::put('/data/{barang}', 'DataBarangController@update');
+    Route::get('/data/{barang}/edit', 'DataBarangController@edit');
 
     // Data Pegawai yang sedang login
     Route::get('/myprofile', 'PegawaiLoginController@edit');

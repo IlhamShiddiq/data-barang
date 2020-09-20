@@ -10,33 +10,45 @@
             <div class="form-add-wrapper">
                 <h1 class="mb-2 title-add text-center">Edit Data Barang</h1>
                 <hr>
-                <form>
+                <form action="{{url('data/'.$data[0]->id)}}" method="POST" enctype="multipart/form-data">
+                    @method('put')
+                    @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="idBarang">Id Barang</label>
-                            <input type="text" readonly class="form-control" placeholder="Id Barang" id="idBarang">
+                            <input type="text" readonly class="form-control" placeholder="Id Barang" id="idBarang" value="{{$data[0]->id}}" name="id">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="namaBarang">Nama Barang</label>
-                            <input type="text" class="form-control" placeholder="Nama Barang" id="namaBarang">
+                            <label for="barang">Nama Barang</label>
+                            <input type="text" class="form-control @error('barang') is-invalid @enderror" placeholder="Nama Barang" id="barang" name="barang" value="{{$data[0]->barang}}">
+                            @error('barang')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="kategoriBarang">Kategori Barang</label>
-                            <select id="kategoriBarang" class="form-control">
-                                <option selected>1</option>
-                                <option>2</option>
-                                <option value="3"></option>
+                            <select id="kategoriBarang" class="form-control" name="id_kategori">
+                                @foreach ($data[1] as $category)
+                                    <option @if($category->id == $data[0]->id_kategori) selected @endif value="{{$category->id}}">{{$category->kategori}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="form-group col-md-5">
                             <label for="kadaluarsa">Expired Date</label>
-                            <input type="date" class="form-control" id="kadaluarsa">
+                            <input type="date" class="form-control" id="kadaluarsa" name="expired" value="{{$data[0]->expired}}">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="stok">Stock</label>
-                            <input type="number" class="form-control" placeholder="Stok Barang" id="stok">
+                            <input type="number" class="form-control @error('stok') is-invalid @enderror" placeholder="Stok Barang" id="stok" name="stok" value="{{$data[0]->stok}}">
+                            @error('stok')
+                                <div class="invalid-feedback">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row">
@@ -44,17 +56,24 @@
                             <label for="foto">File Photo</label>
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="foto" aria-describedby="inputGroupFileAddon01">
+                                  <input type="file" class="custom-file-input @error('foto') is-invalid @enderror" id="foto" name="foto">
                                   <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                  
+                                  
                                 </div>
                             </div>
-                            <div class="view-img">
-
+                            @error('foto')    
+                                <div class="invalid-file">
+                                    <small>{{$message}}</small>
+                                </div>
+                            @enderror
+                            <div class="view-img text-center">
+                                <img src="\uploaded_files\barang\{{$data[0]->image}}" alt="{{$data[0]->barang}}" width="100">
                             </div>
                         </div>
                     </div>
                     <div class="add-btn mt-2">
-                        <button type="submit" class="btn btn-success">Edit Data</button>
+                        <button type="submit" class="btn btn-primary">Add Data</button>
                     </div>
                 </form>
             </div>
