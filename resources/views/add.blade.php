@@ -19,7 +19,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="barang">Nama Barang</label>
-                            <input type="text" class="form-control @error('barang') is-invalid @enderror" placeholder="Nama Barang" id="barang" name="barang">
+                            <input type="text" class="form-control @error('barang') is-invalid @enderror" placeholder="Nama Barang" id="barang" name="barang" value="{{old('barang')}}">
                             @error('barang')
                                 <div class="invalid-feedback">
                                     {{$message}}
@@ -38,11 +38,11 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="kadaluarsa">Expired Date</label>
-                            <input type="date" class="form-control" id="kadaluarsa" name="expired">
+                            <input type="date" class="form-control" id="kadaluarsa" name="expired" value="{{old('expired')}}">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="stok">Stock</label>
-                            <input type="number" class="form-control @error('stok') is-invalid @enderror" placeholder="Stok Barang" id="stok" name="stok">
+                            <input type="number" class="form-control @error('stok') is-invalid @enderror" placeholder="Stok Barang" id="stok" name="stok" value="{{old('stok')}}">
                             @error('stok')
                                 <div class="invalid-feedback">
                                     {{$message}}

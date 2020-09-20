@@ -71,7 +71,7 @@ class DataBarangController extends Controller
         $barang->image = $image;
         $barang->save();
         if($file) $file->move(public_path('uploaded_files/barang/'),$file->getClientOriginalName());
-        // // File::delete(public_path('uploaded_files/barang/'.$file->getClientOriginalName()));
+        
         return redirect('/data')->with('status', 'Data Berhasil Disimpan!');
     }
 
@@ -117,7 +117,12 @@ class DataBarangController extends Controller
      */
     public function destroy(Barang $barang)
     {
-        //
+        Barang::destroy($barang->id);
+        if($barang->image) {
+            if($barang->image != "barang.jpg") File::delete(public_path('uploaded_files/barang/'.$barang->image));
+        }
+
+        return redirect('/data')->with('status', 'Data Berhasil Dihapus!');
     }
 
     public function search(Request $request) 

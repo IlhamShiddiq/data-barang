@@ -33,7 +33,7 @@
                       <td>
                           <a href="#" class="badge badge-info" data-toggle="modal" data-target="#detail" data-id="{{$list->id}}" data-barang="{{$list->barang}}" data-stok="{{$list->stok}}" data-expired="{{$list->expired}}" data-image="{{$list->image}}" data-kategori="{{$list->kategori}}">Detail</a>
                           <a href="{{url('/edit')}}" class="badge badge-success">Edit</a>
-                          <a href="#" class="badge badge-danger">Delete</a>
+                          <a href="#" class="badge badge-danger" data-toggle="modal" data-target="#delete" data-id="{{$list->id}}">Delete</a>
                       </td>
                     </tr>
                   @endforeach
@@ -102,6 +102,27 @@
         </div>
     </div>
   </div>
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="Logout Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Please Confirm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure want to delete this data?
+            </div>
+            <div class="modal-footer">
+                <div class="form-hapus"></div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('script')
@@ -123,6 +144,19 @@
         modal.find('.cat').html(`<input type="text" class="form-control" value="${kategori}">`)
         modal.find('.exp').html(`<input type="text" class="form-control" value="${expired}">`)
         modal.find('.stok').html(`<input type="text" class="form-control" value="${stok}">`)
+      })
+
+      $('#delete').on('show.bs.modal', function (event) {
+        let button = $(event.relatedTarget) // Button that triggered the modal
+        let id = button.data('id')
+        let modal = $(this)
+
+        modal.find('.form-hapus').html(`
+                                        <form action="{{url('/data/${id}')}}" method="POST">
+                                          @csrf
+                                          @method('delete')
+                                          <button type="submit" class="btn btn-danger">Yes</button>
+                                        </form>`)
       })
     </script>
 @endsection
